@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      --cyan-color: hsl(179, 62%, 43%);
+      --yellow: hsl(71, 73%, 54%);
+      --grayish: hsl(218, 22%, 67%);
+      --text-title: 2rem;
+      --text-subtitle: 1.3rem;
+      --body-text: 1rem;
+    }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Karla', sans-serif;
+
+    }
+    body{
+      min-height: 100vh;
+      background-color: hsl(204, 43%, 93%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      "top top"
+      "content1 content2";
+      width: 700px;
+      height: 400px;
+    }
+    #top, #content1, #content2{
+      padding: 30px;
+    }
+    #top{
+      background-color: rgb(255, 255, 255);
+      grid-area: top;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    #content1{
+      background-color: #2ab2af;
+      grid-area: content1;
+      border-bottom-left-radius: 10px;
+
+    }
+    #content2{
+      background-color: #49bebd;
+      grid-area: content2;
+      border-bottom-right-radius: 10px;
+
+    }
+    .title{
+      font-size: var(--text-title);
+      color: var(--cyan-color);
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    .sub-title{
+      font-size: var(--text-subtitle);
+      font-weight: 700;
+      margin-bottom: 20px;
+
+    }
+    .yellow{
+      color:var(--yellow);
+    }
+    .neutral{
+      color: white;
+    }
+    .body{
+      font-size: var(--body-text);
+      line-height: 1.5rem;
+    }
+    #top .body{
+      color: var(--grayish)
+    }
+    #content1 h1{
+      color: white;
+    }
+    #content1 h1 span{
+      color: #abffff;
+      font-size: var(--body-text);
+      font-weight: 400;
+    }
+    #content1 .body{
+      margin-top: 10px;
+      color: white;
+      line-height: 1.5rem;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+      background-color: var(--yellow);
+      padding: 15px 0;
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 10px;
+      font-size: var(--body-text);
+      margin-top: 20px;
+    }
+    #content2 .body{
+      color: #abffff;
+      line-height: 1.5rem;
+    }
+    @media (min-width: 375px) and (max-width: 1440px){
+      .container{
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "top"
+        "content1"
+        "content2";
+      }
+      #content1{
+        border-radius: 0;
+      }
+      #content2{
+        border-bottom-left-radius: 10px; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="top">
+      <p class="title">Join our community</p>
+      <p class="sub-title yellow">30-day, hassle-free money back guarantee</p>
+      <p class="body">Gain access to our full library of tutorials along with expert code reviews. 
+        Perfect for any developers who are serious about honing their skills.</p>
+    </div>
+    <div id="content1">
+      <p class="sub-title neutral">Monthly Subscription</p>
+      <h1>&dollar;29 <span>per month</span></h1>
+      <p class="body">Full access for less than &dollar;1 a day</p>
+      <a href="#">Sign Up</a>
+    </div>
+    <div id="content2">
+      <p class="sub-title neutral">Why Us?</p>
+      <p class="body">Tutorials by industry experts
+        Peer &amp; expert code review
+        Coding exercises
+        Access to our GitHub repos
+        Community forum
+        Flashcard decks
+        New videos every week</p>
+    </div>
+  </div>
+  
+
+</body>
+</html>
